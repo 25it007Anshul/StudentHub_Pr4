@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f7f8fc">
+  <meta name="description" content="StudentHub JavaScript DOM manipulation and event handling practical.">
+  <title>StudentHub | DOM Practical 04</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="StudentHub home">
+        <span class="brand-mark" aria-hidden="true">S<span>.</span></span>
+        <span class="brand-copy"><strong>StudentHub</strong><small>LEARN · BUILD · GROW</small></span>
+      </a>
+      <button class="menu-icon icon-button" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="primaryNav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="navbar" id="primaryNav" aria-label="Main navigation">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#gallery">Gallery</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </nav>
+      <button id="themeBtn" class="theme-button" type="button" aria-label="Switch to dark mode">
+        <span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark mode</span>
+      </button>
+    </header>
+
+    <main id="home">
+      <section class="hero" id="about" aria-labelledby="heroTitle">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> WEB DEVELOPMENT & FRAMEWORKS <span class="eyebrow-line"></span></div>
+          <h1 id="heroTitle">Make the web<br> <span>come alive.</span></h1>
+          <p class="hero-description">Explore the building blocks of interactive websites with JavaScript DOM manipulation and event handling.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#components">Explore components <span aria-hidden="true">↘</span></a>
+            <button class="button button-secondary" id="openModal" type="button"><span class="play-icon" aria-hidden="true">▶</span> Quick introduction</button>
+          </div>
+          <div class="hero-meta"><span class="meta-check" aria-hidden="true">✓</span> Practical 04 <span class="meta-divider"></span> Hands-on learning</div>
+        </div>
+        <div class="hero-art" aria-label="Illustration of a browser window with code elements">
+          <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+          <div class="floating-chip chip-top"><span class="chip-dot purple"></span> Interactive UI</div>
+          <div class="browser-card">
+            <div class="browser-top"><div class="browser-dots"><i></i><i></i><i></i></div><span>studenthub.app</span><span class="browser-lock">⌑</span></div>
+            <div class="browser-body">
+              <div class="code-line line-short"><b>01</b><span class="code-purple">const</span> <span class="code-blue">web</span> = {</div>
+              <div class="code-line indent"><b>02</b><span class="code-green">interactive</span>: <span class="code-orange">true</span>,</div>
+              <div class="code-line indent"><b>03</b><span class="code-green">creative</span>: <span class="code-orange">true</span>,</div>
+              <div class="code-line"><b>04</b>};</div>
+              <div class="code-cursor"></div>
+              <div class="mini-result"><span class="result-icon">✦</span><div><strong>Looks good!</strong><small>Your UI is ready to shine.</small></div><span class="result-check">✓</span></div>
+            </div>
+          </div>
+          <div class="floating-chip chip-bottom"><span class="pulse-dot"></span> DOM ready</div>
+          <div class="art-spark spark-one">✳</div><div class="art-spark spark-two">✦</div>
+        </div>
+      </section>
+
+      <div class="notification" role="status">
+        <span class="notice-icon" aria-hidden="true">✦</span>
+        <p><strong>Welcome, students!</strong> Your next interactive web experience starts here.</p>
+        <span class="notice-tag">LET'S LEARN</span>
+        <button id="closeBanner" class="notice-close" type="button" aria-label="Dismiss welcome message">×</button>
+      </div>
+
+      <section class="components-section" id="components" aria-labelledby="componentsTitle">
+        <div class="section-heading">
+          <div><div class="section-kicker">YOUR TOOLKIT</div><h2 id="componentsTitle">Small components. <span>Big possibilities.</span></h2></div>
+          <p>Discover how simple events can create a more engaging experience.</p>
+        </div>
+        <div class="component-grid">
+          <article class="component-card faq-card">
+            <div class="card-heading"><span class="card-icon icon-violet" aria-hidden="true">?</span><span class="card-index">01 / INTERACTION</span></div>
+            <h3>Frequently asked questions</h3><p class="card-description">Click a question to reveal its answer.</p>
+            <div class="faq-list">
+              <div class="faq"><button class="question" type="button" aria-expanded="false"><span>What is JavaScript?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="answer" hidden><p>JavaScript adds behavior and interactivity to webpages, from menus to dynamic content.</p></div></div>
+              <div class="faq"><button class="question" type="button" aria-expanded="false"><span>What is the DOM?</span><span class="faq-plus" aria-hidden="true">+</span></button><div class="answer" hidden><p>The Document Object Model represents a webpage as objects that JavaScript can read and change.</p></div></div>
+            </div>
+            <div class="card-foot"><span class="foot-dot violet"></span> DOM selection · Click events</div>
+          </article>
+
+          <article class="component-card gallery-card" id="gallery">
+            <div class="card-heading"><span class="card-icon icon-mint" aria-hidden="true">▧</span><span class="card-index">02 / MEDIA</span></div>
+            <div class="gallery-title-row"><div><h3>Nature gallery</h3><p class="card-description">A little change of scenery.</p></div><span class="image-count" id="imageCount">01 <i>/</i> 03</span></div>
+            <div class="slider-frame">
+              <img id="slider" src="image1.jpg" alt="A wide green mountain valley beneath a blue sky" width="1200" height="675">
+              <div class="slider-overlay"><span id="imageCaption">The quiet mountains</span><span class="slider-indicator" aria-hidden="true">↗</span></div>
+            </div>
+            <div class="slider-controls"><button id="prev" class="slider-button" type="button" aria-label="Show previous image">← <span>Previous</span></button><div class="slider-dots" aria-label="Choose image"><button class="slider-dot active" type="button" aria-label="Show image 1" data-slide="0"></button><button class="slider-dot" type="button" aria-label="Show image 2" data-slide="1"></button><button class="slider-dot" type="button" aria-label="Show image 3" data-slide="2"></button></div><button id="next" class="slider-button next-button" type="button" aria-label="Show next image"><span>Next</span> →</button></div>
+            <div class="card-foot"><span class="foot-dot mint"></span> Image slider · Array indexing</div>
+          </article>
+
+          <article class="component-card modal-card" id="contact">
+            <div class="card-heading"><span class="card-icon icon-blue" aria-hidden="true">↗</span><span class="card-index">03 / FEEDBACK</span></div>
+            <h3>Curiosity starts here</h3><p class="card-description">Open a modal window to see another DOM interaction in action.</p>
+            <div class="modal-preview"><div class="preview-window"><div class="preview-window-top"><i></i><i></i><i></i></div><div class="preview-window-content"><span class="preview-spark">✦</span><strong>A moment to explore</strong><span class="preview-line"></span><span class="preview-line short"></span><span class="preview-pill">Hello, student!</span></div></div><span class="preview-bubble bubble-one">click()</span><span class="preview-bubble bubble-two">event</span></div>
+            <button class="button button-primary full-button" type="button" id="openModalSecondary">Open welcome modal <span aria-hidden="true">↗</span></button>
+            <div class="card-foot"><span class="foot-dot blue"></span> Modal popup · Event handling</div>
+          </article>
+        </div>
+      </section>
+
+      <section class="bottom-note"><div class="note-symbol" aria-hidden="true">✳</div><div><h2>Keep experimenting.</h2><p>Every click is an opportunity to learn something new.</p></div><span class="note-tag">PRACTICAL 04</span></section>
+    </main>
+    <footer class="site-footer"><a class="footer-brand" href="#home">StudentHub<span>.</span></a><p>Built for curious minds and future builders.</p><span>HTML · CSS · JAVASCRIPT</span></footer>
+  </div>
+
+  <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDescription" hidden>
+    <div class="modal-content">
+      <button id="closeModal" class="modal-close" type="button" aria-label="Close modal">×</button>
+      <div class="modal-illustration"><span>✦</span><i></i><i></i><i></i></div>
+      <div class="section-kicker">WELCOME TO STUDENTHUB</div>
+      <h2 id="modalTitle">Hello, student!</h2>
+      <p id="modalDescription">This practical brings JavaScript to life through DOM selection, event listeners, a responsive menu, a gallery slider, and more. Explore each component and see what happens.</p>
+      <button class="button button-primary modal-done" id="modalDone" type="button">Let's explore <span aria-hidden="true">→</span></button>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
